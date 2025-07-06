@@ -546,7 +546,6 @@
             padding: 40px 0;
         }
 
-        /* Modified timeline vertical line */
         .timeline::before {
             content: '';
             position: absolute;
@@ -554,29 +553,31 @@
             background-color: var(--primary-color);
             top: 0;
             bottom: 0;
-            left: 20px; /* Aligned to the left */
+            left: 50%;
+            margin-left: -1px;
         }
 
         .timeline-item {
-            padding: 20px 0 20px 60px; /* Adjusted padding for single column */
+            padding: 20px 0;
             position: relative;
             width: 100%;
         }
 
-        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(odd) {
+            padding-right: 50%;
+        }
+
         .timeline-item:nth-child(even) {
-            padding-right: 0; /* Remove right padding */
-            padding-left: 60px; /* Consistent left padding */
+            padding-left: 50%;
         }
 
         .timeline-content {
-            padding: 25px; /* Slightly reduced padding */
+            padding: 30px;
             background-color: var(--card-bg);
             border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            box-shadow: var(--box-shadow);
             position: relative;
             transition: var(--transition);
-            border-left: 5px solid var(--primary-color); /* Added a left border */
         }
 
         .timeline-content:hover {
@@ -585,9 +586,8 @@
         }
 
         .timeline-date {
-            position: static; /* Removed absolute positioning */
-            display: inline-block;
-            margin-bottom: 10px; /* Added margin below date */
+            position: absolute;
+            top: -15px;
             background-color: var(--primary-color);
             color: white;
             padding: 5px 15px;
@@ -596,10 +596,12 @@
             font-weight: 600;
         }
 
-        .timeline-item:nth-child(odd) .timeline-date,
+        .timeline-item:nth-child(odd) .timeline-date {
+            right: -25px;
+        }
+
         .timeline-item:nth-child(even) .timeline-date {
-            left: auto; /* Reset left/right for consistent positioning */
-            right: auto;
+            left: -25px;
         }
 
         .timeline-title {
@@ -620,23 +622,21 @@
             color: var(--text-light);
         }
 
-        /* Modified timeline icon */
         .timeline-icon {
             position: absolute;
-            left: 0; /* Aligned to the left */
-            margin-left: 0; /* Removed negative margin */
+            left: 50%;
+            margin-left: -20px;
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: var(--primary-color); /* Changed to primary color */
+            background-color: var(--card-bg);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 0 5px var(--bg-color);
-            color: white; /* Changed icon color to white */
+            color: var(--primary-color);
             font-size: 1.2rem;
-            top: 40px; /* Adjusted top position to align with card */
-            z-index: 1; /* Ensure icon is above the line */
+            top: 30px;
         }
 
         /* Experience Section */
