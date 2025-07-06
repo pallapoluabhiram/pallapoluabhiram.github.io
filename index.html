@@ -99,6 +99,18 @@
             box-shadow: 0 10px 20px rgba(41, 128, 185, 0.2);
         }
 
+        .btn-resume {
+            background-color: var(--accent-color);
+            color: white;
+            margin-left: 20px;
+        }
+
+        .btn-resume:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.2);
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 60px;
@@ -153,6 +165,10 @@
             font-weight: 700;
             color: var(--dark-color);
             letter-spacing: 1px;
+        }
+
+        .logo a span {
+            color: var(--primary-color);
         }
 
         .nav ul {
@@ -229,6 +245,7 @@
             padding-top: 80px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
         }
 
         .hero .container {
@@ -1253,6 +1270,15 @@
                 flex-direction: row;
                 flex-wrap: wrap;
             }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn-resume {
+                margin-left: 0;
+            }
         }
     </style>
     <!-- Font Awesome for icons -->
@@ -1295,18 +1321,18 @@
                 <p class="description">Passionate about applying machine learning and AI to solve real-world problems.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">Contact Me</a>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                    <a href="https://drive.google.com/file/d/1Lru8N7ogRzosMOwLZfiJ4jfZQxZp6vkY/view?usp=drive_link" target="_blank" class="btn btn-resume">View Resume</a>
                 </div>
                 <div class="social-icons">
-                    <a href="https://linkedin.com/in/Abhiram" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Abhiram" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abhiram-reddy-pallapolu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/pallapoluabhiram" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="mailto:pallapoluabhiram@gmail.com"><i class="fas fa-envelope"></i></a>
                     <a href="tel:+916303667385"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="https://drive.google.com/file/d/1Lru8N7ogRzosMOwLZfiJ4jfZQxZp6vkY/view?usp=drive_link" alt="Abhiram Reddy Pallapolu">
+                    <img src="https://drive.google.com/uc?export=view&id=1Lru8N7ogRzosMOwLZfiJ4jfZQxZp6vkY" alt="Abhiram Reddy Pallapolu">
                     <div class="tech-icons">
                         <i class="fab fa-python" data-tooltip="Python"></i>
                         <i class="fas fa-robot" data-tooltip="AI/ML"></i>
@@ -1529,9 +1555,9 @@
             <div class="projects-container">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Detection of Periapical Lesions">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Detection of Periapical Lesions">
                         <div class="overlay">
-                            <a href="#" class="view-btn">View Details</a>
+                            <a href="https://github.com/pallapoluabhiram/Detection-of-Periapical-Lesions-" target="_blank" class="view-btn">View Details</a>
                         </div>
                     </div>
                     <div class="project-info">
@@ -1546,9 +1572,9 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Voice Mailing System">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Voice Mailing System">
                         <div class="overlay">
-                            <a href="#" class="view-btn">View Details</a>
+                            <a href="https://github.com/pallapoluabhiram/voice-based-email-system" target="_blank" class="view-btn">View Details</a>
                         </div>
                     </div>
                     <div class="project-info">
@@ -1563,9 +1589,9 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="Pneumonia Detection">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Pneumonia Detection">
                         <div class="overlay">
-                            <a href="#" class="view-btn">View Details</a>
+                            <a href="https://github.com/pallapoluabhiram/pnemonia-detection" target="_blank" class="view-btn">View Details</a>
                         </div>
                     </div>
                     <div class="project-info">
@@ -1580,18 +1606,18 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=815&q=80" alt="Air Pollution Monitoring">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Parkinson's Disease Detection">
                         <div class="overlay">
-                            <a href="#" class="view-btn">View Details</a>
+                            <a href="https://github.com/pallapoluabhiram/parkinson-disease-prediction" target="_blank" class="view-btn">View Details</a>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Air Pollution Monitoring using IoT</h3>
-                        <p>Built a monitoring system using DHT11 sensor and Arduino to track temperature and humidity.</p>
+                        <h3>Parkinson's Disease Detection with MRI</h3>
+                        <p>Web-based AI application that detects Parkinson's Disease from MRI brain scans using deep learning with LIME explanations.</p>
                         <div class="project-tags">
-                            <span>IoT</span>
-                            <span>Arduino</span>
-                            <span>Flutter</span>
+                            <span>Python</span>
+                            <span>Deep Learning</span>
+                            <span>Flask</span>
                         </div>
                     </div>
                 </div>
@@ -1665,7 +1691,7 @@
                         </div>
                         <div class="info-content">
                             <h3>LinkedIn</h3>
-                            <p>linkedin.com/in/Abhiram</p>
+                            <p>linkedin.com/in/abhiram-reddy-pallapolu</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1674,23 +1700,23 @@
                         </div>
                         <div class="info-content">
                             <h3>GitHub</h3>
-                            <p>github.com/Abhiram</p>
+                            <p>github.com/pallapoluabhiram</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/pallapoluabhiram@gmail.com" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject">
+                            <input type="text" id="subject" name="subject" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -1717,8 +1743,8 @@
                     </ul>
                 </div>
                 <div class="footer-social">
-                    <a href="https://linkedin.com/in/Abhiram" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Abhiram" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abhiram-reddy-pallapolu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/pallapoluabhiram" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="mailto:pallapoluabhiram@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -1873,6 +1899,22 @@
                 // Reset the form
                 contactForm.reset();
             });
+
+            // Animate progress bars when they come into view
+            const skills = document.querySelectorAll('.skill');
+            const animateSkills = () => {
+                skills.forEach(skill => {
+                    const rect = skill.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        const percent = skill.getAttribute('data-percent');
+                        const progress = skill.querySelector('.progress');
+                        progress.style.width = `${percent}%`;
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', animateSkills);
+            animateSkills(); // Run once on page load
         });
     </script>
 </body>
