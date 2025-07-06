@@ -285,48 +285,7 @@
             object-fit: cover;
         }
 
-        .tech-icons {
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            background-color: var(--card-bg);
-            padding: 15px 20px;
-            border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .tech-icons i {
-            font-size: 1.5rem;
-            margin: 0 10px;
-            color: var(--primary-color);
-            position: relative;
-            cursor: pointer;
-        }
-
-        .tech-icons i::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--dark-color);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            white-space: nowrap;
-        }
-
-        .tech-icons i:hover::after {
-            opacity: 1;
-            visibility: visible;
-            bottom: 120%;
-        }
+        /* Removed .tech-icons styling as the element is removed */
 
         .subtitle {
             font-size: 1.2rem;
@@ -884,6 +843,7 @@
             border-radius: 50px;
             font-weight: 600;
             transition: var(--transition);
+            margin-right: 10px; /* Space between buttons */
         }
 
         .view-btn:hover {
@@ -911,6 +871,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            margin-bottom: 15px; /* Added margin for spacing with new button */
         }
 
         .project-tags span {
@@ -980,10 +941,14 @@
         .contact-content {
             display: flex;
             gap: 50px;
+            flex-direction: column;
+            align-items: center;
         }
 
         .contact-info {
             flex: 1;
+            width: 100%;
+            max-width: 600px;
         }
 
         .info-item {
@@ -1016,41 +981,6 @@
             color: var(--text-light);
         }
 
-        .contact-form {
-            flex: 1;
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
         /* Footer */
         .footer {
             background-color: var(--dark-color);
@@ -1064,7 +994,7 @@
             margin-bottom: 40px;
         }
 
-        .footer-logo a {
+        .footer-logo {
             font-size: 1.8rem;
             font-weight: 700;
             color: white;
@@ -1160,6 +1090,86 @@
         .back-to-top:hover {
             background-color: var(--dark-color);
             transform: translateY(-5px);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .modal-close-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .modal-body {
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            max-height: 400px; /* Limit height for scrollable content */
+            overflow-y: auto; /* Add scroll if content exceeds height */
+            padding-right: 10px; /* Space for scrollbar */
+        }
+
+        .modal-body.loading {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-light);
         }
 
         /* Responsive Styles */
@@ -1321,7 +1331,8 @@
                 <p class="description">Passionate about applying machine learning and AI to solve real-world problems.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">Contact Me</a>
-                    <a href="https://drive.google.com/file/d/1Lru8N7ogRzosMOwLZfiJ4jfZQxZp6vkY/view?usp=drive_link" target="_blank" class="btn btn-resume">View Resume</a>
+                    <!-- Updated href to open in Google Drive viewer -->
+                    <a href="https://drive.google.com/file/d/1Lru8N7ogRzosMOwLZfiJ4jfZQxZp6vkY/view" class="btn btn-resume">View Resume</a>
                 </div>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/abhiram-reddy-pallapolu/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -1332,13 +1343,9 @@
             </div>
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="https://drive.google.com/uc?export=view&id=1Lru8N7ogRzosMOwLZfiJ4jfZQxZp6vkY" alt="Abhiram Reddy Pallapolu">
-                    <div class="tech-icons">
-                        <i class="fab fa-python" data-tooltip="Python"></i>
-                        <i class="fas fa-robot" data-tooltip="AI/ML"></i>
-                        <i class="fas fa-database" data-tooltip="Data Science"></i>
-                        <i class="fab fa-js" data-tooltip="JavaScript"></i>
-                    </div>
+                    <!-- Updated image src to the new GitHub raw image link -->
+                    <img src="https://raw.githubusercontent.com/pallapoluabhiram/pallapoluabhiram.github.io/main/ChatGPT%20Image%20Jul%206%2C%202025%2C%2011_28_08%20AM.png" alt="Abhiram Reddy Pallapolu">
+                    <!-- Removed the tech-icons div -->
                 </div>
             </div>
         </div>
@@ -1561,13 +1568,14 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Detection of Periapical Lesions using YOLOv5</h3>
-                        <p>Developed a YOLOv5-based model to detect and classify periapical lesions in dental X-rays.</p>
+                        <h3 class="project-title">Detection of Periapical Lesions using YOLOv5</h3>
+                        <p class="project-description">Developed a YOLOv5-based model to detect and classify periapical lesions in dental X-rays.</p>
                         <div class="project-tags">
                             <span>Python</span>
                             <span>Computer Vision</span>
                             <span>Deep Learning</span>
                         </div>
+                        <!-- Removed Enhance Description button -->
                     </div>
                 </div>
                 <div class="project-card">
@@ -1578,13 +1586,14 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Voice Mailing System for Visually Impaired People</h3>
-                        <p>Built a speech-based mailing system to help visually impaired users send and read emails.</p>
+                        <h3 class="project-title">Voice Mailing System for Visually Impaired People</h3>
+                        <p class="project-description">Built a speech-based mailing system to help visually impaired users send and read emails.</p>
                         <div class="project-tags">
                             <span>Python</span>
                             <span>Speech Recognition</span>
                             <span>Accessibility</span>
                         </div>
+                        <!-- Removed Enhance Description button -->
                     </div>
                 </div>
                 <div class="project-card">
@@ -1595,13 +1604,14 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Pneumonia Detection Using Chest X-Rays</h3>
-                        <p>Created an AI-powered web tool to detect pneumonia from chest X-ray images using deep learning.</p>
+                        <h3 class="project-title">Pneumonia Detection Using Chest X-Rays</h3>
+                        <p class="project-description">Created an AI-powered web tool to detect pneumonia from chest X-ray images using deep learning.</p>
                         <div class="project-tags">
                             <span>Python</span>
                             <span>Deep Learning</span>
                             <span>Web Development</span>
                         </div>
+                        <!-- Removed Enhance Description button -->
                     </div>
                 </div>
                 <div class="project-card">
@@ -1612,13 +1622,14 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Parkinson's Disease Detection with MRI</h3>
-                        <p>Web-based AI application that detects Parkinson's Disease from MRI brain scans using deep learning with LIME explanations.</p>
+                        <h3 class="project-title">Parkinson's Disease Detection with MRI</h3>
+                        <p class="project-description">Web-based AI application that detects Parkinson's Disease from MRI brain scans using deep learning with LIME explanations.</p>
                         <div class="project-tags">
                             <span>Python</span>
                             <span>Deep Learning</span>
                             <span>Flask</span>
                         </div>
+                        <!-- Removed Enhance Description button -->
                     </div>
                 </div>
             </div>
@@ -1682,7 +1693,7 @@
                         </div>
                         <div class="info-content">
                             <h3>Email</h3>
-                            <p>pallapoluabhiram@gmail.com</p>
+                            <p><a href="mailto:pallapoluabhiram@gmail.com">pallapoluabhiram@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1691,7 +1702,7 @@
                         </div>
                         <div class="info-content">
                             <h3>LinkedIn</h3>
-                            <p>linkedin.com/in/abhiram-reddy-pallapolu</p>
+                            <p><a href="https://www.linkedin.com/in/abhiram-reddy-pallapolu/" target="_blank">linkedin.com/in/abhiram-reddy-pallapolu</a></p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1700,27 +1711,11 @@
                         </div>
                         <div class="info-content">
                             <h3>GitHub</h3>
-                            <p>github.com/pallapoluabhiram</p>
+                            <p><a href="https://github.com/pallapoluabhiram" target="_blank">github.com/pallapoluabhiram</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/pallapoluabhiram@gmail.com" method="POST">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+                <!-- Removed the contact form as requested -->
             </div>
         </div>
     </section>
@@ -1762,6 +1757,8 @@
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
+
+    <!-- Removed Modal for Enhanced Description -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1881,25 +1878,6 @@
                 });
             });
 
-            // Form Submission
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
-                
-                // Here you would typically send the form data to a server
-                // For demonstration, we'll just show an alert
-                alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
-                
-                // Reset the form
-                contactForm.reset();
-            });
-
             // Animate progress bars when they come into view
             const skills = document.querySelectorAll('.skill');
             const animateSkills = () => {
@@ -1915,6 +1893,8 @@
 
             window.addEventListener('scroll', animateSkills);
             animateSkills(); // Run once on page load
+
+            // Removed Gemini API Integration: Project Description Enhancer related code
         });
     </script>
 </body>
